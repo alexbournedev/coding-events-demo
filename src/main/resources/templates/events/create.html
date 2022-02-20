@@ -8,18 +8,45 @@
 <form method="post">
     <div class="form-group">
         <label>Name
-            <input type="text" name="name" class="form-control">
+            <input th:field="${event.name}" class="form-control">
         </label>
+        <p class="error" th:errors="${event.name}"></p>
     </div>
     <div class="form-group">
         <label>Description
-            <input type="text" name="description" class="form-control">
+            <input th:field="${event.description}" class="form-control">
         </label>
+        <p class="error" th:errors="${event.description}"></p>
     </div>
     <div class="form-group">
         <label>Contact Email
-            <input type="text" name="contactEmail" class="form-control">
+            <input th:field="${event.contactEmail}" class="form-control">
         </label>
+        <p class="error" th:errors="${event.contactEmail}"></p>
+    </div>
+    <div class="form-group">
+        <label>Location
+            <input type="text" name="location" class="form-control">
+        </label>
+        <p class="error" th:errors="${event.location}"></p>
+    </div>
+    <div class="form-group">
+        <label>Registration Required?
+            <input type="checkbox" name="registration" class="form-control">
+        </label>
+        <p class="error" th:errors="${event.registration}"></p>
+    </div>
+    <div class="form-group">
+        <label>Max Number of Attendees
+            <input type="text" name="attendees" class="form-control">
+        </label>
+        <p class="error" th:errors="${event.attendees}"></p>
+    </div>
+    <div class="form-group">
+        <label>Masks Required?
+            <input type="checkbox" name="maskRequired" class="form-control">
+        </label>
+        <p class="error" th:errors="${event.maskRequired}"></p>
     </div>
     <div class="form-group">
         <input type="submit" value="Create" class="btn btn-success">
